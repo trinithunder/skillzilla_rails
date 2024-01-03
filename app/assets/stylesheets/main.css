@@ -1,0 +1,10 @@
+#nav{
+    background-color: darkgreen;
+    height: 40px;
+}
+#nav_title{
+    color: whitesmoke;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
