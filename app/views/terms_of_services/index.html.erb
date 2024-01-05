@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Terms of services</h1>
+
+<div id="terms_of_services">
+  <% @terms_of_services.each do |terms_of_service| %>
+    <%= render terms_of_service %>
+    <p>
+      <%= link_to "Show this terms of service", terms_of_service %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New terms of service", new_terms_of_service_path %>

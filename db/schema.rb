@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_03_233055) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_05_162541) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -45,6 +45,49 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_03_233055) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "learning_styles", force: :cascade do |t|
+    t.string "title"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "onboardings", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "privacy_policies", force: :cascade do |t|
+    t.string "title"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "plan_name"
+    t.integer "plan_price"
+    t.date "plan_billing_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "terms_of_services", force: :cascade do |t|
+    t.string "title"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "topic_comments", force: :cascade do |t|
     t.text "body"
     t.integer "topic_id", null: false
@@ -70,11 +113,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_03_233055) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "benefit_status"
+    t.integer "subscription_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
   add_foreign_key "courses", "categories"
   add_foreign_key "topic_comments", "topics"
   add_foreign_key "topics", "categories"
+  add_foreign_key "users", "subscriptions"
 end

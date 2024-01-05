@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Learning styles</h1>
+
+<div id="learning_styles">
+  <% @learning_styles.each do |learning_style| %>
+    <%= render learning_style %>
+    <p>
+      <%= link_to "Show this learning style", learning_style %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New learning style", new_learning_style_path %>

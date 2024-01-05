@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @privacy_policy %>
+
+<div>
+  <%= link_to "Edit this privacy policy", edit_privacy_policy_path(@privacy_policy) %> |
+  <%= link_to "Back to privacy policies", privacy_policies_path %>
+
+  <%= button_to "Destroy this privacy policy", @privacy_policy, method: :delete %>
+</div>

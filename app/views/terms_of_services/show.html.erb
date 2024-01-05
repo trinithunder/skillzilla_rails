@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @terms_of_service %>
+
+<div>
+  <%= link_to "Edit this terms of service", edit_terms_of_service_path(@terms_of_service) %> |
+  <%= link_to "Back to terms of services", terms_of_services_path %>
+
+  <%= button_to "Destroy this terms of service", @terms_of_service, method: :delete %>
+</div>

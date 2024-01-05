@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Privacy policies</h1>
+
+<div id="privacy_policies">
+  <% @privacy_policies.each do |privacy_policy| %>
+    <%= render privacy_policy %>
+    <p>
+      <%= link_to "Show this privacy policy", privacy_policy %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New privacy policy", new_privacy_policy_path %>
