@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Hubs</h1>
+
+<div id="hubs">
+  <% @hubs.each do |hub| %>
+    <%= render hub %>
+    <p>
+      <%= link_to "Show this hub", hub %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New hub", new_hub_path %>

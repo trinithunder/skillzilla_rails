@@ -1,0 +1,2 @@
+class DaysStreak < ApplicationRecord
+end

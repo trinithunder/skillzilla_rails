@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @life_stage %>
+
+<div>
+  <%= link_to "Edit this life stage", edit_life_stage_path(@life_stage) %> |
+  <%= link_to "Back to life stages", life_stages_path %>
+
+  <%= button_to "Destroy this life stage", @life_stage, method: :delete %>
+</div>

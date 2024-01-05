@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Days streaks</h1>
+
+<div id="days_streaks">
+  <% @days_streaks.each do |days_streak| %>
+    <%= render days_streak %>
+    <p>
+      <%= link_to "Show this days streak", days_streak %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New days streak", new_days_streak_path %>

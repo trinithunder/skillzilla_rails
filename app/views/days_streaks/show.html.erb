@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @days_streak %>
+
+<div>
+  <%= link_to "Edit this days streak", edit_days_streak_path(@days_streak) %> |
+  <%= link_to "Back to days streaks", days_streaks_path %>
+
+  <%= button_to "Destroy this days streak", @days_streak, method: :delete %>
+</div>

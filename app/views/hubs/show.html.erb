@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @hub %>
+
+<div>
+  <%= link_to "Edit this hub", edit_hub_path(@hub) %> |
+  <%= link_to "Back to hubs", hubs_path %>
+
+  <%= button_to "Destroy this hub", @hub, method: :delete %>
+</div>

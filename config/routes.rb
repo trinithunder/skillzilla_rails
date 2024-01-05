@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :hubs
+  resources :posts
+  resources :days_streaks
+  resources :leaves
+  resources :life_stages
   resources :subscriptions
   resources :learning_styles
   resources :privacy_policies
