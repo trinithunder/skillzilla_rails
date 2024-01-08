@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quizzes
   resources :hubs
   resources :posts
   resources :days_streaks
