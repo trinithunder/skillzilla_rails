@@ -7,3 +7,13 @@
     padding-left: 250px;
     padding-bottom: 20px;
 }
+
+#blogs,p{
+    color: #666666;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 40px; /* Fixed value in pixels */
+}
+#blogs,h1{
+    text-align: center;
+}
