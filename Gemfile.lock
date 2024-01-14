@@ -158,6 +158,9 @@ GEM
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    passenger (6.0.19)
+      rack
+      rake (>= 0.8.1)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -264,6 +267,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)
+  passenger
   puma (>= 5.0)
   rails (~> 7.1.1)
   selenium-webdriver
