@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :app_layers
   resources :quizzes
   resources :hubs
   resources :posts

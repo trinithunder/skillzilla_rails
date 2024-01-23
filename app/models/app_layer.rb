@@ -1,0 +1,2 @@
+class AppLayer < ApplicationRecord
+end

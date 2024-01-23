@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @app_layer %>
+
+<div>
+  <%= link_to "Edit this app layer", edit_app_layer_path(@app_layer) %> |
+  <%= link_to "Back to app layers", app_layers_path %>
+
+  <%= button_to "Destroy this app layer", @app_layer, method: :delete %>
+</div>
