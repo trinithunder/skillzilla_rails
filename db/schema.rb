@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_15_155046) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_23_221551) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -145,12 +145,34 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_15_155046) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schools", charset: "utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "teacher_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_schools_on_teacher_id"
+  end
+
+  create_table "students", charset: "utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "subscriptions", charset: "utf8", force: :cascade do |t|
     t.string "plan_name"
     t.integer "plan_price"
     t.date "plan_billing_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "teachers", charset: "utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_teachers_on_student_id"
   end
 
   create_table "terms_of_services", charset: "utf8", force: :cascade do |t|
@@ -196,6 +218,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_15_155046) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "categories"
   add_foreign_key "posts", "users"
+  add_foreign_key "schools", "teachers"
+  add_foreign_key "teachers", "students"
   add_foreign_key "topic_comments", "topics"
   add_foreign_key "topics", "categories"
   add_foreign_key "users", "subscriptions"
