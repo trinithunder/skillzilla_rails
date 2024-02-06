@@ -1,0 +1,2 @@
+class ThemeColor < ApplicationRecord
+end

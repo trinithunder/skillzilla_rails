@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @theme_color %>
+
+<div>
+  <%= link_to "Edit this theme color", edit_theme_color_path(@theme_color) %> |
+  <%= link_to "Back to theme colors", theme_colors_path %>
+
+  <%= button_to "Destroy this theme color", @theme_color, method: :delete %>
+</div>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Theme colors</h1>
+
+<div id="theme_colors">
+  <% @theme_colors.each do |theme_color| %>
+    <%= render theme_color %>
+    <p>
+      <%= link_to "Show this theme color", theme_color %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New theme color", new_theme_color_path %>

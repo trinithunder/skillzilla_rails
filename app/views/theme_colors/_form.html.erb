@@ -1,0 +1,27 @@
+<%= form_with(model: theme_color) do |form| %>
+  <% if theme_color.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(theme_color.errors.count, "error") %> prohibited this theme_color from being saved:</h2>
+
+      <ul>
+        <% theme_color.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :hexCode, style: "display: block" %>
+    <%= form.text_field :hexCode %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
