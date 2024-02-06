@@ -2639,37 +2639,57 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="m-b-100">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <form>
               <div class="form-group">
-                <label>Email</label>
+
+                <label><%= f.label :email %></label>
                 <div class="prepend-icon">
-                  <input type="email" class="form-control input-lg" placeholder="Enter your email">
+
+<!--                  <input type="email" class="form-control input-lg" placeholder="Enter your email">-->
+                    <div>
+<!--                      <br />-->
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-lg" %>
+                    </div>
                   <i class="nc-icon-outline ui-1_email-83"></i>
+
                 </div>
               </div>
               <div class="form-group">
-                <label>Password</label>
+                <label><%= f.label :password %></label>
                 <div class="prepend-icon">
-                  <input type="password" class="form-control input-lg" placeholder="Enter your password">
+<!--                  <input type="password" class="form-control input-lg" placeholder="Enter your password">-->
+                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-lg" %>
                   <i class="nc-icon-outline ui-1_lock-circle"></i>
                 </div>
               </div>
-              <button type="submit" class="btn btn-lg m-t-30 btn-important btn-primary btn-block">LOGIN</button>
+<!--              <button type="submit" class="btn btn-lg m-t-30 btn-important btn-primary btn-block">LOGIN</button>-->
+              <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+
+              <div class="actions">
+                <%= f.submit "Log in", class: "btn btn-lg m-t-30 btn-important btn-primary btn-block" %>
+              </div>
             </form>
             <div class="m-t-20 p-b-50 clearfix">
-              <a href="password-recover">Forgot password?</a>
-              <a href="register" class="pull-right">Create my account</a>
+              <a href="password/new">Forgot password?</a>
+              <a href="sign_up" class="pull-right">Create my account</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+                  <% end %>
     <!-- END LOGIN -->
 
   </div>
   <!-- END MAIN CONTENT -->
   <!-- BEGIN FOOTER -->
-  <footer id="footer">
+  <!--<footer id="footer">
     <div id="footer-main" class="container-large">
       <div class="row">
         <div class="col-lg-3 col-md-6">
@@ -2682,7 +2702,7 @@
             <p><i class="nc-icon-outline tech_mobile"></i> <a href="tel:+1-888-541-7871" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Call us Now"> +1-888-541-7871</a></p>
           </div>
         </div>
-        <!--<div class="col-lg-3 col-md-6 hidden-md-down">
+        <div class="col-lg-3 col-md-6 hidden-md-down">
           <div class="widget widget-links">
             <div class="widget-title">
               <h3 class="widget-title">Informations</h3>
@@ -2748,6 +2768,7 @@
       </div>
     </div>
   </footer>
+
   <!-- END FOOTER -->
 </div>
 <!-- BEGIN OFF FULLSCREEN SEARCH -->
@@ -2867,27 +2888,27 @@
 </body>
 </html>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<!--  <div class="field">-->
+<!--    <%#= f.label :email %><br />-->
+    <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!--  </div>-->
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+<!--  <div class="field">-->
+<!--    <%#= f.label :password %><br />-->
+    <%#= f.password_field :password, autocomplete: "current-password" %>
+<!--  </div>-->
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+  <%# if devise_mapping.rememberable? %>
+<!--    <div class="field">-->
+      <%#= f.check_box :remember_me %>
+      <%#= f.label :remember_me %>
+<!--    </div>-->
+  <%# end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+<!--  <div class="actions">-->
+    <%#= f.submit "Log in" %>
+<!--  </div>-->
+<%# end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
