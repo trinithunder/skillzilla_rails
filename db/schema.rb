@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_06_160452) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_07_130544) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -151,6 +151,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_06_160452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_schools_on_teacher_id"
+  end
+
+  create_table "social_media", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", charset: "utf8", force: :cascade do |t|
