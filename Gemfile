@@ -14,9 +14,6 @@ gem "mysql2", "~> 0.5"
 #gem 'passenger'
 gem 'passenger'
 
-#gem 'tinymce-rails'
-gem 'tinymce-rails'
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
