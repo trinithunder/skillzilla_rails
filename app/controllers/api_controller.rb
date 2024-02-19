@@ -14,4 +14,9 @@ class ApiController < ApplicationController
     render json: response.body
   end
 
+  def users
+    @user = User.all
+    render json: {Users:@user}
+  end
+
 end
