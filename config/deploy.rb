@@ -1,14 +1,16 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.18.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "skillzilla_rails"
+set :repo_url, "git@github.com:trinithunder/skillzilla_rails.git"
 
-# Default branch is :master
+server '162.240.165.165', user: 'deploy_user', roles: %w{app db web}
+
+ Default branch is :main
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/var/www/skillzilla_rails"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
