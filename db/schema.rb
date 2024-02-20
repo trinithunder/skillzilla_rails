@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_12_154055) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_20_142406) do
   create_table "action_text_rich_texts", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -73,6 +73,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_12_154055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_courses_on_category_id"
+  end
+
+  create_table "dashboards", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "days_streaks", charset: "utf8", force: :cascade do |t|

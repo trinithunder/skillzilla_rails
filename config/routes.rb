@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dashboards
   resources :social_media
   resources :theme_colors
   resources :schools
