@@ -1,0 +1,18 @@
+runtime: ruby
+env: flex
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+entrypoint: bundle exec rails server -p $PORT
+
+env_variables:
+  CLOUD_SQL_USERNAME: skillzilla
+  CLOUD_SQL_PASSWORD: Mp9Z;c*zTRiiDUaI
+  CLOUD_SQL_DATABASE_NAME: skillzilla_rails_production
+  CLOUD_SQL_CONNECTION_NAME: skillzillaapi:us-central1:skillzillarails
