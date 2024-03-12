@@ -1,17 +1,12 @@
-runtime: ruby32
+runtime: ruby
+env: flex
 
-instance_class: F2
+manual_scaling:
+  instances: 1
 
-env_variables:
-  BUCKET_NAME: "skillzillabucket"
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
 
-handlers:
-  - url: /stylesheets
-    static_dir: stylesheets
-
-  - url: /(.*\.(gif|png|jpg))$
-    static_files: static/\1
-    upload: static/.*\.(gif|png|jpg)$
-
-  - url: /.*
-    script: auto
+entrypoint: bundle exec rails server -p $PORT
