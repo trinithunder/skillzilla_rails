@@ -52,6 +52,10 @@ development:
 #
 production:
   <<: *default
+  adapter: mysql2
+  encoding: utf8mb4
   database: skillzilla_rails_production
-  username: havic
-  password: <%= ENV["SKILLZILLA_RAILS_DATABASE_PASSWORD"] %>
+  username: skillzilla
+  password: Mp9Z;c*zTRiiDUaI
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: skillzillaapi:us-central1:skillzillarails
